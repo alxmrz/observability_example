@@ -1,0 +1,49 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "graylog2/gelf-php": "^2.0",
+        "guzzlehttp/guzzle": "^7.10",
+        "http-interop/http-factory-guzzle": "^1.2",
+        "monolog/monolog": "^3.10",
+        "open-telemetry/exporter-otlp": "^1.3",
+        "open-telemetry/sdk": "^1.12",
+        "php-di/php-di": "^7.1",
+        "promphp/prometheus_client_php": "^2.14",
+        "slim/psr7": "^1.8",
+        "slim/slim": "4.*",
+        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/twig": "^2.12|^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false,
+            "tbachert/spi": false
+        },
+        "bump-after-update": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    }
+}
